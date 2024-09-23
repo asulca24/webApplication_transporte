@@ -1,0 +1,74 @@
+﻿@model webApplication_transporte.Models.Transporte
+
+@{
+    ViewBag.Title = "Costos";
+}
+
+<h2>Gastos Transportes</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Numero", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.num_guia, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Fecha", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.fecha_guia, "{0:dd/MM/yyyy}", htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.cliente, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Carga", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.carga, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("TM", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.TM, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Costo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("costo", ViewBag.costo as string, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Seguro", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("seguro", ViewBag.seguro as string, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Monto", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("monto", ViewBag.monto as string, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("IGV", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("igv", ViewBag.igv as string, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+        <div class=" form-group">
+            @Html.Label("Monto Total", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("total", ViewBag.total as string, htmlAttributes: new { @class = "form-control col-md-10" })
+
+        </div>
+
+        <br />
+        <div class=" form-group">
+            @Html.ActionLink("Nuevo", "Costos", null, new { @class = "btn btn-primary" })
+            <input type="submit" value="Calcular" class="btn btn-primary"/>
+        </div>
+
+
+    </div>
+
+
+
+}
